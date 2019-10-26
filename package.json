@@ -1,6 +1,6 @@
 {
   "name": "jap-express",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Jap plugin for express",
   "main": "index.js",
   "private": true,
