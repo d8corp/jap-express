@@ -1,0 +1,46 @@
+{
+  "name": "jap-express",
+  "version": "1.0.1",
+  "description": "Jap plugin for express",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "bin/release",
+    "start": "node example/server.js",
+    "patch": "bin/release patch",
+    "minor": "bin/release minor",
+    "major": "bin/release major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d8corp/-jap-express.git"
+  },
+  "keywords": [
+    "JSON",
+    "REST",
+    "API"
+  ],
+  "author": "Mikhail Lysikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d8corp/-jap-express/issues"
+  },
+  "homepage": "https://github.com/d8corp/-jap-express#readme",
+  "dependencies": {
+    "core-js": "^2.6.10",
+    "express": "^4.17.1",
+    "jap": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-jsx": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "babel-preset-minify": "^0.5.1",
+    "react-scripts": "^3.2.0",
+    "rimraf": "^3.0.0"
+  }
+}
