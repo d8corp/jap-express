@@ -1,6 +1,6 @@
 {
   "name": "jap-express",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Jap plugin for express",
   "main": "index.js",
   "private": true,
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d8corp/-jap-express.git"
+    "url": "git+https://github.com/d8corp/jap-express.git"
   },
   "keywords": [
     "JSON",
@@ -23,9 +23,9 @@
   "author": "Mikhail Lysikov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/d8corp/-jap-express/issues"
+    "url": "https://github.com/d8corp/jap-express/issues"
   },
-  "homepage": "https://github.com/d8corp/-jap-express#readme",
+  "homepage": "https://github.com/d8corp/jap-express#readme",
   "dependencies": {
     "core-js": "^2.6.10",
     "express": "^4.17.1",
