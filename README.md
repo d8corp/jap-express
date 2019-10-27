@@ -1,5 +1,5 @@
 # @jap/express
-[npm](https://www.npmjs.com/package/jap-express) | [github](https://www.npmjs.com/package/jap-express)  
+[npm](https://www.npmjs.com/package/jap-express) | [github](https://github.com/d8corp/jap-express)  
 This is the plugin for [express](https://expressjs.com/) to use [jap](https://www.npmjs.com/package/jap).  
 ### Simple example
 `jap(handler, resolve, reject, start, end, context)`  
@@ -41,7 +41,7 @@ const jap = require('jap-express/classic').default
 const app = express()
 
 class App {
-  constructor (req) {
+  constructor (req, res) {
     this.req = req
   }
   userAgent () {

@@ -1,6 +1,7 @@
 # @jap/express
+[npm](https://www.npmjs.com/package/jap-express) | [github](https://github.com/d8corp/jap-express)  
 This is the plugin for [express](https://expressjs.com/) to use [jap](https://www.npmjs.com/package/jap).  
-###Simple example
+### Simple example
 `jap(handler, resolve, reject, start, end, context)`  
 Add empty file `static/index.html`  
 Add file `index.js`
@@ -40,7 +41,7 @@ const jap = require('jap-express/classic').default
 const app = express()
 
 class App {
-  constructor (req) {
+  constructor (req, res) {
     this.req = req
   }
   userAgent () {
@@ -68,7 +69,7 @@ fetch('/', {
   body: '{"userAgent": null}'
 }).then(data => data.json()).then(console.log)
 ```
-###Real example
+### Real example
 You may look at real example with [jap](https://www.npmjs.com/package/jap):
 ```bash
 git clone https://github.com/d8corp/jap.git

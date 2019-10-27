@@ -1,6 +1,6 @@
 {
   "name": "jap-express",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Jap plugin for express",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,9 @@
   "keywords": [
     "JSON",
     "REST",
-    "API"
+    "API",
+    "express",
+    "plugin"
   ],
   "author": "Mikhail Lysikov",
   "license": "MIT",
