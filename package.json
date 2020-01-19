@@ -1,15 +1,16 @@
 {
   "name": "jap-express",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Jap plugin for express",
   "main": "index.js",
+  "module": "module.js",
   "private": true,
   "scripts": {
-    "build": "bin/release",
-    "start": "node example/server.js",
-    "patch": "bin/release patch",
-    "minor": "bin/release minor",
-    "major": "bin/release major"
+    "build": "bin/release -rollup",
+    "test": "jest src/index.test.ts",
+    "patch": "bin/release -patch -rollup",
+    "minor": "bin/release -minor -rollup",
+    "major": "bin/release -major -rollup"
   },
   "repository": {
     "type": "git",
@@ -29,20 +30,21 @@
   },
   "homepage": "https://github.com/d8corp/jap-express#readme",
   "dependencies": {
-    "core-js": "^2.6.10",
     "express": "^4.17.1",
-    "jap": "^1.1.0"
+    "jap": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-syntax-jsx": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "babel-preset-minify": "^0.5.1",
-    "react-scripts": "^3.2.0",
-    "rimraf": "^3.0.0"
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^24.9.0",
+    "babel-jest": "^24.9.0",
+    "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^3.7.5"
   }
 }

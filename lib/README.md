@@ -1,13 +1,13 @@
-# @jap/express
+# jap/express
 [npm](https://www.npmjs.com/package/jap-express) | [github](https://github.com/d8corp/jap-express)  
-This is the plugin for [express](https://expressjs.com/) to use [jap](https://www.npmjs.com/package/jap).  
+This is a plugin for [express](https://expressjs.com/) to use [jap](https://www.npmjs.com/package/jap).  
 ### Simple example
 `jap(handler, resolve, reject, start, end, context)`  
 Add empty file `static/index.html`  
 Add file `index.js`
 ```javascript
 const express = require('express')
-const jap = require('jap-express').default
+const jap = require('jap-express')
 
 const app = express()
 
@@ -36,7 +36,7 @@ You may use classes with `jap`, this is a good way to have separately space for 
 Add `classic.js`
 ```javascript
 const express = require('express')
-const jap = require('jap-express/classic').default
+const jap = require('jap-express')
 
 const app = express()
 

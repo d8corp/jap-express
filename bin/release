@@ -2,6 +2,7 @@
 const fs = require('fs')
 const rimraf = require('rimraf')
 const {exec} = require('child_process')
+const packageJSON = require('../package')
 
 const deep = []
 
@@ -13,8 +14,9 @@ start()
 async function start () {
   consoleStart('deploying')
   await removeFiles()
-  await babelUsage()
+  await rollUpUsage()
   await Promise.all([
+    copyTS(),
     copyLicense(),
     copyPackage(),
     copyReadme()
@@ -23,10 +25,12 @@ async function start () {
   consoleEnd('deploying')
 }
 // steps
-async function babelUsage () {
-  consoleStart('converting js files')
-  await getPromise(resolve => exec(`npx babel ${sourceDir} -d ${releaseDir}`, {}, resolve))
-  consoleEnd('converting js files')
+async function rollUpUsage () {
+  if (process.argv.includes('-rollup')) {
+    consoleStart('converting js for browsers')
+    await getPromise(resolve => exec(`rollup -c`, {}, resolve))
+    consoleEnd('converting js for browsers')
+  }
 }
 async function removeFiles () {
   consoleStart('remove files')
@@ -44,18 +48,22 @@ async function copyLicense () {
   await getPromise(resolve => fs.copyFile(__dirname + '/../LICENSE', releaseDir + '/LICENSE', 'utf8', resolve))
   consoleEnd('copying license')
 }
+async function copyTS () {
+  consoleStart('copying original type script file')
+  await getPromise(resolve => fs.copyFile(__dirname + '/../src/index.ts', releaseDir + '/index.ts', 'utf8', resolve))
+  consoleEnd('copying original type script file')
+}
 async function copyPackage () {
   consoleStart('copying package.json')
-  const packageJSON = require('../package')
   const version = packageJSON.version.split('.')
-  if (process.argv.includes('patch')) {
+  if (process.argv.includes('-patch')) {
     version[2]++
   }
-  if (process.argv.includes('minor')) {
+  if (process.argv.includes('-minor')) {
     version[1]++
     version[2] = 0
   }
-  if (process.argv.includes('major')) {
+  if (process.argv.includes('-major')) {
     version[1] = 0
     version[2] = 0
     version[0]++
@@ -75,7 +83,7 @@ async function copyPackage () {
   consoleEnd('copying package.json')
 }
 async function publish () {
-  if (process.argv.includes('patch') || process.argv.includes('minor') || process.argv.includes('major')) {
+  if (process.argv.includes('-patch') || process.argv.includes('-minor') || process.argv.includes('-major')) {
     consoleStart('publishing')
     await getPromise(resolve => exec(`npm publish ${releaseDir}`, {}, resolve))
     consoleEnd('publishing')

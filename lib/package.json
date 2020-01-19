@@ -1,8 +1,9 @@
 {
   "name": "jap-express",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Jap plugin for express",
   "main": "index.js",
+  "module": "module.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/d8corp/jap-express.git"
@@ -21,8 +22,7 @@
   },
   "homepage": "https://github.com/d8corp/jap-express#readme",
   "dependencies": {
-    "core-js": "^2.6.10",
     "express": "^4.17.1",
-    "jap": "^1.1.0"
+    "jap": "^1.2.0"
   }
 }
