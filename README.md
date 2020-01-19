@@ -3,7 +3,6 @@
 This is a plugin for [express](https://expressjs.com/) to use [jap](https://www.npmjs.com/package/jap).
 > `japExpress(handler, resolve, reject, start, end, context)`  
 ### Simple example 
-- Add empty file `static/index.html`  
 - Add file `index.js`
 ```javascript
 const express = require('express')
@@ -11,7 +10,7 @@ const jap = require('jap-express')
 
 const app = express()
 
-app.use(express.static('static'))
+app.get('/', (req, res) => res.send(''))
 app.post('/', jap({test: true}))
 app.listen(3000)
 ```
@@ -48,7 +47,7 @@ class App {
   }
 }
 
-app.use(express.static('static'))
+app.get('/', (req, res) => res.send(''))
 app.post('/', jap(App))
 app.listen(3001)
 
